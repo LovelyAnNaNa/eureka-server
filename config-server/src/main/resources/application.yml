@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LovelyAnNaNa/eureka-server.git
+          search-paths: config-repo  #配置文件存储路径
+          username: LovelyAnNaNa
+          password: Wang654321
+
+server:
+  port: 12100

@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:12100 #配置中心具体地址,如config-server
+      name: config-client #对应{application}
+      profile: prod #对应profile部分
+      label: master #对应#{label}部分,即git的分支,如果配置中心使用的是本地存储,则配置无用
+      discovery:
+        enabled: true #开启Config服务发现支持
+        service-id: config-server #指定Service端的name
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7003/eureka

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 12000
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7003/eureka/
+zuul:
+  ignored-services: "*"  #如果指定单个禁止直接访问填写服务名称
+  routes:
+    #为指定的服务指定别名
+    eureka-producer: /producer/**
+    eureka-consumer-feign-hystrix: /consumer/**

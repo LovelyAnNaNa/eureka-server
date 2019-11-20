@@ -1,0 +1,21 @@
+server:
+  port: 9002
+
+#feign实现负载均衡
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7003/eureka/
+spring:
+  application:
+    name: eureka-consumer-feign-hystrix
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+#开启熔断器
+feign:
+  hystrix:
+    enabled: true

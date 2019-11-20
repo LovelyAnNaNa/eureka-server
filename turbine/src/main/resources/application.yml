@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: turbine
+server:
+  port:8080
+management:
+  port:8081
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7003/eureka
+turbine:
+  app-config: eureka-consumer-feign-hystrix  #参数指定了需要收集监控信息的服务名
+  cluster-name-expression: new String("default")
+  combine-host-port: true

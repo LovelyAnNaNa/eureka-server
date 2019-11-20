@@ -1,0 +1,20 @@
+spring:
+#  profiles:
+#    #指定启动时使用的配置文件
+#    active: peer2
+  application:
+    name: eureka-server
+
+server:
+  port: 7003
+
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    #禁止服务自己注册自己
+    register-with-eureka: false
+    fetch-registry: false
+    #注册到其他两个eureka
+    service-url:
+      defaultZone: http://peer1:7001/eureka/,http://peer2:7002/eureka/
